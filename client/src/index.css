@@ -333,7 +333,7 @@ template {
 /**
  * Add the correct display in IE 10.
  */
-[hidden] {
+[hidden], .hidden {
   display: none;
 }
 
@@ -1718,4 +1718,31 @@ label form [type='radio'] {
   .align-content-center-xl {
     align-content: center;
   }
+}
+
+.add-tech-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* min-height: 30vh; */
+}
+
+button.add-tech {
+margin-top: 1rem;
+}
+
+form.add-tech-form input {
+  height:2.5rem;
+  border: solid #ccc 1px;
+  border-radius: 4px;
+}
+
+.error {
+color: rgba(255, 0, 0, 0.385);
+margin: 0 0 0 1rem;
+}
+
+.display-flex-error {
+  display: flex;
+  align-items: flex-end;
 }

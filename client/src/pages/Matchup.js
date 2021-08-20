@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 import { QUERY_TECH } from '../utils/queries';
 import { CREATE_MATCHUP } from '../utils/mutations';
+import AddTechForm from '../components/addTechForm';
 
 const Matchup = () => {
+
   const { loading, data } = useQuery(QUERY_TECH);
 
-  const techList = data?.tech || [];
+  const [techList, setTechList] = useState([])
+
+  useEffect(() => {
+    setTechList(data?.tech || [])
+  }, [data])
 
   const [formData, setFormData] = useState({
     tech1: 'JavaScript',
     tech2: 'JavaScript',
+    newTech: 'newTech'
   });
   let history = useHistory();
 
@@ -76,6 +83,7 @@ const Matchup = () => {
             </button>
           </form>
         )}
+        <AddTechForm techList={techList} setTechList={setTechList} />
       </div>
       {error && <div>Something went wrong...</div>}
     </div>
