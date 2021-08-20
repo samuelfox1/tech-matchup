@@ -21,3 +21,12 @@ export const CREATE_VOTE = gql`
     }
   }
 `;
+
+export const CREATE_TECH = gql`
+  mutation createTech($name: String!) {
+    createTech(name: $name) {
+      _id
+      name
+    }
+  }
+`
