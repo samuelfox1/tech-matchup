@@ -1,5 +1,5 @@
 {
-  "name": "mern-graphql-demo-tech-matchup",
+  "name": "tech-matchup",
   "version": "1.0.0",
   "description": "demo application to explore graphql & mern",
   "main": "server/server.js",
